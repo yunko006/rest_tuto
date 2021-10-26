@@ -1,9 +1,11 @@
 from django.urls import path
-# from .views import PostList, PostDetail
+from .views import PostList, PostDetail
 
 app_name = 'blog_api'
 
 urlpatterns = [
-    # path('<int:pk>/', PostDetail.as_view(), name='detailcreate'),
-    # path('', PostList.as_view(), name='listcreate'),
+    # show a detail view of a post
+    path('<int:pk>/', PostDetail.as_view(), name='detailcreate'),
+    # show all the post
+    path('', PostList.as_view(), name='listcreate'),
 ]
